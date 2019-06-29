@@ -10,6 +10,10 @@ buildscript {
 	}
 }
 
+//plugins {
+//    id 'net.ltgt.apt' version '0.10'
+//}
+
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -29,5 +33,7 @@ dependencies {
 	implementation('com.h2database:h2')
 	implementation('org.apache.tomcat.embed:tomcat-embed-jasper')
 	implementation('javax.servlet:jstl')
+	compileOnly 'org.projectlombok:lombok:1.18.4'
+//	apt 'org.projectlombok:lombok:1.18.4'
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
