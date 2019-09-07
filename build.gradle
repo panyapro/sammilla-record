@@ -10,9 +10,9 @@ buildscript {
 	}
 }
 
-//plugins {
-//    id 'net.ltgt.apt' version '0.10'
-//}
+plugins {
+    id 'net.ltgt.apt' version '0.10'
+}
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
@@ -34,6 +34,6 @@ dependencies {
 	implementation('org.apache.tomcat.embed:tomcat-embed-jasper')
 	implementation('javax.servlet:jstl')
 	compileOnly 'org.projectlombok:lombok:1.18.4'
-//	apt 'org.projectlombok:lombok:1.18.4'
+	apt 'org.projectlombok:lombok:1.18.4'
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
