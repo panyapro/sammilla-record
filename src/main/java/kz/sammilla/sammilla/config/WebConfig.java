@@ -21,12 +21,14 @@ public class WebConfig implements WebMvcConfigurer {
                 "/img/**",
                 "/css/**",
                 "/js/**",
-                "/fonts/**")
+                "/fonts/**",
+                "/icons/**")
                 .addResourceLocations(
                         "classpath:/static/img/",
                         "classpath:/static/css/",
                         "classpath:/static/fonts/",
-                        "classpath:/static/js/")
+                        "classpath:/static/js/",
+                        "classpath:/static/icons/")
                 .setCachePeriod(360);
     }
 

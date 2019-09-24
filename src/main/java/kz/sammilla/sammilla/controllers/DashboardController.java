@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class DashboardController {
 
     @RequestMapping(path = SammillaConst.URL.ROOT)
-    public String root(){
+    public String root() {
         return SammillaConst.URL.REDIRECT + SammillaConst.URL.DASHBOARD;
     }
 
     @RequestMapping(path = SammillaConst.URL.DASHBOARD,
             method = RequestMethod.GET)
-    public String dashboard(){
+    public String dashboard() {
         return SammillaConst.JSP.Dashboard.DASHBOARD;
     }
 }
