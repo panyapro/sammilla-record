@@ -66,6 +66,16 @@
                                    <i class="icon-graph menu-icon"></i><span class="nav-text">Dashboard</span>
                                </a>
                            </li>
+                           <li>
+                               <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                   <i class="icon-basket menu-icon"></i><span class="nav-text">Orders</span>
+                               </a>
+                           </li>
+                           <li>
+                               <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                   <i class="icon-present menu-icon"></i><span class="nav-text">Products</span>
+                               </a>
+                           </li>
                            <li class="mega-menu mega-menu-sm">
                                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                                    <i class="icon-user menu-icon"></i><span class="nav-text">Users</span>

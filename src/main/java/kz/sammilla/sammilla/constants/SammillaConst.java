@@ -13,6 +13,14 @@ public interface SammillaConst {
             String CREATE_USER = USERS + "/create";
             String EDIT_USER = USERS + "/edit/{userId}";
         }
+
+        interface PRODUCT {
+
+        }
+
+        interface ORDER {
+
+        }
     }
 
     interface JSP {
@@ -25,6 +33,14 @@ public interface SammillaConst {
         interface USER {
             String USER_DIR = "user";
             String CREATE_EDIT = USER_DIR + "/create_edit";
+        }
+
+        interface PRODUCT {
+
+        }
+
+        interface ORDER {
+
         }
     }
 }
