@@ -14,10 +14,6 @@ public class OrderService {
     @Autowired
     private OrderDao orderDao;
 
-    public List<Order> getOrdersByUser(User user) {
-        return orderDao.getOrdersByUser(user);
-    }
-
     public Iterable<Order> getOrders(){
         return orderDao.findAll();
     }

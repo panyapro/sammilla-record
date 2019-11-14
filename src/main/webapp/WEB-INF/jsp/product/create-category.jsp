@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="nav" tagdir="/WEB-INF/tags" %>
 <html>
 
 <head>
@@ -11,22 +12,18 @@
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/product.js"></script>
 
 </head>
 
 <body>
+<nav:navigation/>
 <div class="container theme-showcase">
     <h1>Создание категории</h1>
     <nav:valid-message/>
-    <form action="/users/create" method="post">
+    <form action="/sammilla/product/category/create" method="post">
         <label for="name">Название</label>
         <input style="width: 25%" type="text" id="name" class="form-control" name="name">
-
-        <label for="phoneNumber">Номер телефона</label>
-        <input style="width: 25%" type="text" id="name" class="form-control" name="phoneNumber">
-
-        <label for="comment">Комментарий</label>
-        <input style="width: 25%" type="text" id="name" class="form-control" name="comment">
 
         <button type="submit" class="btn btn-default" style="margin-top: 10px">Создать</button>
     </form>

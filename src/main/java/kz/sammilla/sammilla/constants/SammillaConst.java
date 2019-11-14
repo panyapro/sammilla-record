@@ -15,7 +15,9 @@ public interface SammillaConst {
         }
 
         interface PRODUCT {
-
+            String PRODUCTS = ROOT + "products";
+            String CREATE_PRODUCT = PRODUCTS + "/create";
+            String EDIT_PRODUCT = PRODUCTS + "/edit/{productId}";
         }
 
         interface ORDER {
@@ -32,11 +34,21 @@ public interface SammillaConst {
 
         interface USER {
             String USER_DIR = "user";
-            String CREATE_EDIT = USER_DIR + "/create_edit";
+            String CREATE = USER_DIR + "/create";
+            String EDIT = USER_DIR + "/edit";
         }
 
         interface PRODUCT {
+            String PRODUCT_DIR = "product";
+            String CREATE = PRODUCT_DIR + "/create-product";
+            String EDIT = PRODUCT_DIR + "/edit-product";
+            String ALL_PRODUCT = PRODUCT_DIR + "/overview";
+        }
 
+        interface CATEGORY {
+            String CREATE_CATEGORY = PRODUCT.PRODUCT_DIR + "/create-category";
+            String EDIT_CATEGORY = PRODUCT.PRODUCT_DIR + "/edit-category";
+            String ALL_CATEGORY = PRODUCT.PRODUCT_DIR + "/overview-category";
         }
 
         interface ORDER {

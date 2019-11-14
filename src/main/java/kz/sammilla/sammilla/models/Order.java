@@ -11,14 +11,13 @@ import java.util.Date;
 public class Order {
 
     public Order(){}
-    public Order(Long id, String name, Integer price, Date creationDate, Date completedDate, OrderStatus status, User user) {
+    public Order(Long id, String name, Integer price, Date creationDate, Date completedDate, OrderStatus status) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.creationDate = creationDate;
         this.completedDate = completedDate;
         this.status = status;
-        this.user = user;
     }
 
     @Id
@@ -31,9 +30,6 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn
-    private User user;
 
     public Long getId() {
         return id;
@@ -81,13 +77,5 @@ public class Order {
 
     public void setStatus(OrderStatus status) {
         this.status = status;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

@@ -1,8 +1,5 @@
 package kz.sammilla.sammilla.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,8 +12,10 @@ public class User {
     private String name;
     private String phoneNumber;
     private String comment;
-    @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL)
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Order> orders;
 
     public Long getId() {
