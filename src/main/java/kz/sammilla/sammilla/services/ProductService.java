@@ -24,6 +24,6 @@ public class ProductService {
     }
 
     public Product editProduct(Product product){
-
+        return null;
     }
 }
