@@ -26,7 +26,7 @@ public class Product implements Serializable{
 
     private Integer price;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Category category;
 

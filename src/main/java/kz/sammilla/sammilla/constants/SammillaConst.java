@@ -18,6 +18,11 @@ public interface SammillaConst {
             String PRODUCTS = ROOT + "products";
             String CREATE_PRODUCT = PRODUCTS + "/create";
             String EDIT_PRODUCT = PRODUCTS + "/edit/{productId}";
+
+            interface CATEGORY {
+                String CATEGORIES = ROOT + "categories";
+                String CREATE_CATEGORY = CATEGORIES + "/create";
+            }
         }
 
         interface ORDER {

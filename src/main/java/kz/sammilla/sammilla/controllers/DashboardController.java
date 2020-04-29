@@ -28,6 +28,6 @@ public class DashboardController {
     public String dashboard(Model model) {
         List<User> users = userService.getAllUsers();
         model.addAttribute("users", users);
-        return SammillaConst.JSP.Dashboard.DASHBOARD;
+        return "new/dashboard";
     }
 }

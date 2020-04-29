@@ -1,70 +1,67 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix="nav" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 
 <html>
 
-<head>
-
-    <link href="/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
-    <link href="/css/custom.css" rel="stylesheet"/>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/product.js"></script>
-
-</head>
-
 <body>
-<nav:navigation/>
-<div class="container theme-showcase">
-    <h1>Редактирование продукта ${product.name}</h1>
-    <nav:valid-message/>
-    <form action="/sammilla/product/edit/${product.id}" method="post">
-        <label for="name">Название</label>
-        <input style="width: 25%" type="text" id="name" class="form-control" name="name" value="${product.name}">
-
-        <label for="code">Штрихкод</label>
-        <div>
-            <input style="width: 25%" type="text" id="code" class="form-control" name="code" value="${product.code}"
-                   disabled>
-        </div>
-
-        <label for="arrivalCost">Закупочная цена</label>
-        <input style="width: 25%" type="text" id="arrivalCost" class="form-control" name="arrivalCost"
-               value="${product.arrivalCost}">
-
-        <label for="sellingPrice">Продажная</label>
-        <input style="width: 25%" type="text" id="sellingPrice" class="form-control" name="sellingPrice"
-               value="${product.sellingPrice}">
-
-        <label for="categoryId">Категория</label>
-        <select id="categoryId" name="categoryId" class="form-control" style="width: 25%">
-            <option value="${null}">Выберите категорию</option>
-            <c:forEach items="${category}" var="category">
-                <option value="${category.id}">${category.name}</option>
-            </c:forEach>
-        </select>
-
-        <label for="supplierId">Поставщик</label>
-        <select id="supplierId" name="supplierId" class="form-control" style="width: 25%">
-            <option value="${null}">Выберите поставщика</option>
-            <c:forEach items="${suppliers}" var="sup">
-                <option value="${sup.id}">${sup.name}</option>
-            </c:forEach>
-        </select>
-
-        <button type="submit" class="btn btn-default" style="margin-top: 10px"
-                onclick="$('#code').prop('disabled', false);">Редактировать
-        </button>
-    </form>
-</div>
+<tags:navigation_new/>
+    <div class="content-body">
+        <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                            <h4 class="card-title">Редактирование продукта - ${product.name}</h4>
+                                <div class="form-validation">
+                                    <form class="form-valide" action="/products/edit/${product.id}" method="post">
+                                    <input type="hidden" value="${product.id}" name="id"/>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="name">Название<span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="Введите название..." value="${product.name}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="price">Цена<span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="price" name="price" placeholder="Введите цену.." value="${product.price}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="category">Категория<span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" id="categoryId" name="category.id">
+                                                    <option value="${null}">Выберите категорию</option>
+                                                    <c:forEach items="${category}" var="category">
+                                                        <option value="${category.id}">${category.name}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="submit" class="btn btn-primary" style="margin-top: 10px"
+                                                                onclick="$('#code').prop('disabled', false);">Редактировать
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 <script>
-    $("#categoryId").val(${product.category.id})
-    $("#supplierId").val(${product.supplier.id})
+    $("#name").focus();
 </script>
+
 </body>
 
 </html>

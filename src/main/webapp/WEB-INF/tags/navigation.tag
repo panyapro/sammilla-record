@@ -3,7 +3,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-tope">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/sammilla/product">Королева Хозяюшка</a>
+            <a class="navbar-brand" href="/sammilla/product">Sammilla.kz</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -15,10 +15,9 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="/sammilla/product">Все продукты</a>
-                            <a href="/sammilla/product/create">Создать продукт</a>
-                            <a href="/sammilla/product/category/create">Создать категорию</a>
-                            <a href="/sammilla/supplier/create">Создать поставщика</a>
+                            <a href="/products">Все продукты</a>
+                            <a href="/products/create">Создать продукт</a>
+                            <a href="/products/category/create">Создать категорию</a>
                         </li>
                     </ul>
                 </li>

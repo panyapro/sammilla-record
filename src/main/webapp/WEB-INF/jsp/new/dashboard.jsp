@@ -16,7 +16,7 @@
 
        <body>
          <div id="main-wrapper">
-          <nav:navigation/>
+          <nav:navigation_new/>
           <div class="content-body">
 
            <div class="container-fluid mt-3">

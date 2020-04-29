@@ -21,6 +21,7 @@
 </head>
 
 <body>
+<nav:navigation/>
 <div class="container theme-showcase">
 <div class="table-responsive">
   <table class="table table-hover">
