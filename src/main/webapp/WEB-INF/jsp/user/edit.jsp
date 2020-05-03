@@ -16,27 +16,73 @@
 </head>
 
 <body>
-<div class="container theme-showcase">
-    <h1>Редактирование пользователя</h1>
-    <nav:navigation/>
-    <form action="/users/edit/%{user.id}" method="post">
-        <label for="name">Имя</label>
-        <input style="width: 25%" type="text" id="name" class="form-control" name="name"
-            value="${user.name}">
-
-        <label for="phoneNumber">Номер телефона</label>
-        <input style="width: 25%" type="text" id="name" class="form-control" name="phoneNumber"
-            value="${user.phoneNumber}">
-
-        <label for="comment">Комментарий</label>
-        <input style="width: 25%" type="text" id="name" class="form-control" name="comment"
-            value="${user.comment}">
-
-        <button type="submit" class="btn btn-default" style="margin-top: 10px">Сохранить</button>
-    </form>
-    <c:forEach var="order" items="${user.orders}">
-        <p>${order.name}</p>
-    </c:forEach>
+<nav:navigation_new/>
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Редактирование пользователя - ${user.phoneNumber}</h4>
+                            <div class="form-validation">
+                                <form class="form-valide" action="/users/edit/%{user.id}" method="post">
+                                    <input type="hidden" value="${product.id}" name="id"/>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="name">Имя<span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Введите имя..." value="${user.name}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="phoneNumber">Номер телефона<span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Введите номер телефона.." value="${user.phoneNumber}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="comment">Комментарий<span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="comment" name="comment" placeholder="Введите комментарий.." value="${user.comment}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-8 ml-auto">
+                                            <button type="submit" class="btn btn-primary" style="margin-top: 10px"
+                                                    onclick="$('#code').prop('disabled', false);">Редактировать
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        <h4 class="card-title">Заказы пользователя</h4>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach var="order" items="${user.orders}">
+                                <tr>
+                                    <th>${loop.index + 1}</th>
+                                    <td>${order.product.name}</td>
+                                    <td>${order.price}</td>
+                                    <td>${order.product.category.name}</td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

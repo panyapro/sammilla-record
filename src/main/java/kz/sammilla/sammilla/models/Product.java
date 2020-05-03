@@ -26,8 +26,7 @@ public class Product implements Serializable{
 
     private Integer price;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn
+    @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
     public Long getId() { return id; }

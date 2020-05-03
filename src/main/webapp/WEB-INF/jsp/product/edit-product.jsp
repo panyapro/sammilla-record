@@ -36,7 +36,7 @@
                                             </label>
                                             <div class="col-lg-6">
                                                 <select class="form-control" id="categoryId" name="category.id">
-                                                    <option value="${null}">Выберите категорию</option>
+                                                    <option value="${product.category.id}">${product.category.name}</option>
                                                     <c:forEach items="${category}" var="category">
                                                         <option value="${category.id}">${category.name}</option>
                                                     </c:forEach>

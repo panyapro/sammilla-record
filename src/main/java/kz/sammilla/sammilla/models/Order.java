@@ -31,6 +31,14 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product product;
+
+    /***
+     *
+     * GETTERS & SETTERS
+     */
+
     public Long getId() {
         return id;
     }
@@ -77,5 +85,13 @@ public class Order {
 
     public void setStatus(OrderStatus status) {
         this.status = status;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

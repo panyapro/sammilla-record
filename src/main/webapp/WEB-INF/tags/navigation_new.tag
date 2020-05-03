@@ -45,6 +45,7 @@
                                    <i class="icon-user menu-icon"></i><span class="nav-text">Клиенты</span>
                                </a>
                                <ul aria-expanded="false">
+                                   <li><a href="/users">Все клиенты</a></li>
                                    <li><a href="/users/create">Создать клиента</a></li>
                                </ul>
                            </li>

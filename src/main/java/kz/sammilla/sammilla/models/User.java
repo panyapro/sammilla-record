@@ -12,6 +12,7 @@ public class User {
     private String name;
     private String phoneNumber;
     private String comment;
+
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true

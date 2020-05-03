@@ -8,10 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
@@ -39,11 +36,17 @@ public class UserController {
     public String getEditUserForm(@PathVariable("userId") String userId, Model model){
         try {
             Long id = Long.valueOf(userId);
-            model.addAttribute(userService.getUserById(id));
+            model.addAttribute("user", userService.getUserById(id));
             return SammillaConst.JSP.USER.EDIT;
         } catch (Exception e) {
             logger.error("User id is not valid", e);
             return SammillaConst.URL.FORWARD + SammillaConst.URL.DASHBOARD;
         }
+    }
+
+    @GetMapping(value = SammillaConst.URL.USER.USERS)
+    public String getAllUsers(Model model) {
+        model.addAttribute("users", userService.getAllUsers());
+        return SammillaConst.JSP.USER.ALL_USERS;
     }
 }

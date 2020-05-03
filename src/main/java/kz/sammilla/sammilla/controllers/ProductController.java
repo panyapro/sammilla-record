@@ -1,15 +1,15 @@
 package kz.sammilla.sammilla.controllers;
 
 import kz.sammilla.sammilla.constants.SammillaConst;
+import kz.sammilla.sammilla.models.Category;
 import kz.sammilla.sammilla.models.Product;
 import kz.sammilla.sammilla.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class ProductController {
@@ -28,6 +28,7 @@ public class ProductController {
     @RequestMapping(value = SammillaConst.URL.PRODUCT.CREATE_PRODUCT,
             method = RequestMethod.GET)
     public String showCreateProductView(Model model) {
+        model.addAttribute("category", productService.getAllCategories());
         return SammillaConst.JSP.PRODUCT.CREATE;
     }
 
@@ -43,8 +44,13 @@ public class ProductController {
             method = RequestMethod.GET)
     public String showEditProductView(@PathVariable String productId,
                               Model model) {
-        model.addAttribute("product",
-                productService.getProductById(Long.valueOf(productId)));
+        Product existProduct = productService.getProductById(Long.valueOf(productId));
+        model.addAttribute("product", existProduct);
+
+        List<Category> categories = productService.getAllCategories();
+        categories.remove(existProduct.getCategory());
+        model.addAttribute("category", categories);
+
         return SammillaConst.JSP.PRODUCT.EDIT;
     }
 
@@ -62,5 +68,11 @@ public class ProductController {
             method = RequestMethod.GET)
     public String getCreateCategoryView() {
         return SammillaConst.JSP.CATEGORY.CREATE_CATEGORY;
+    }
+
+    @PostMapping(value = SammillaConst.URL.PRODUCT.CATEGORY.CREATE_CATEGORY)
+    public String createCategory(String name) {
+        productService.createCategory(name);
+        return SammillaConst.JSP.PRODUCT.ALL_PRODUCT;
     }
 }

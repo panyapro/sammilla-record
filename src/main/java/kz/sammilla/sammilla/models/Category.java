@@ -1,6 +1,7 @@
 package kz.sammilla.sammilla.models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "category")
@@ -10,6 +11,9 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Product> products;
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

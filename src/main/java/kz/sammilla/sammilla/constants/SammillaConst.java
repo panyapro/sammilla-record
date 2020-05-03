@@ -41,6 +41,7 @@ public interface SammillaConst {
             String USER_DIR = "user";
             String CREATE = USER_DIR + "/create";
             String EDIT = USER_DIR + "/edit";
+            String ALL_USERS = USER_DIR + "/overview";
         }
 
         interface PRODUCT {
