@@ -1,7 +1,4 @@
-package kz.sammilla.sammilla.models;
-
-import lombok.Getter;
-import lombok.Setter;
+package kz.sammilla.models;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,7 +10,6 @@ public class Order {
     public Order(){}
     public Order(Long id, String name, Integer price, Date creationDate, Date completedDate, OrderStatus status) {
         this.id = id;
-        this.name = name;
         this.price = price;
         this.creationDate = creationDate;
         this.completedDate = completedDate;
@@ -23,7 +19,6 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     private Integer price;
     private Date creationDate;
     private Date completedDate;
@@ -33,6 +28,9 @@ public class Order {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Product product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 
     /***
      *
@@ -45,14 +43,6 @@ public class Order {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Integer getPrice() {
@@ -94,4 +84,7 @@ public class Order {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
 }

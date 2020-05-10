@@ -1,8 +1,8 @@
-package kz.sammilla.sammilla.controllers;
+package kz.sammilla.controllers;
 
-import kz.sammilla.sammilla.constants.SammillaConst;
-import kz.sammilla.sammilla.models.User;
-import kz.sammilla.sammilla.services.UserService;
+import kz.sammilla.constants.SammillaConst;
+import kz.sammilla.models.User;
+import kz.sammilla.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,9 +1,9 @@
-package kz.sammilla.sammilla.controllers;
+package kz.sammilla.controllers;
 
-import kz.sammilla.sammilla.constants.SammillaConst;
-import kz.sammilla.sammilla.models.Category;
-import kz.sammilla.sammilla.models.Product;
-import kz.sammilla.sammilla.services.ProductService;
+import kz.sammilla.constants.SammillaConst;
+import kz.sammilla.models.Category;
+import kz.sammilla.models.Product;
+import kz.sammilla.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

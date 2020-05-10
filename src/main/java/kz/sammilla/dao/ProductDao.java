@@ -1,6 +1,6 @@
-package kz.sammilla.sammilla.dao;
+package kz.sammilla.dao;
 
-import kz.sammilla.sammilla.models.Product;
+import kz.sammilla.models.Product;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

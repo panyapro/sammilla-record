@@ -1,4 +1,4 @@
-package kz.sammilla.sammilla;
+package kz.sammilla;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

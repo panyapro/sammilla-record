@@ -1,9 +1,9 @@
-package kz.sammilla.sammilla.services;
+package kz.sammilla.services;
 
-import kz.sammilla.sammilla.dao.CategoryDao;
-import kz.sammilla.sammilla.dao.ProductDao;
-import kz.sammilla.sammilla.models.Category;
-import kz.sammilla.sammilla.models.Product;
+import kz.sammilla.dao.CategoryDao;
+import kz.sammilla.dao.ProductDao;
+import kz.sammilla.models.Category;
+import kz.sammilla.models.Product;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

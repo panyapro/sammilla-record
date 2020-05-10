@@ -1,4 +1,4 @@
-package kz.sammilla.sammilla.models;
+package kz.sammilla.models;
 
 import javax.persistence.*;
 import java.io.Serializable;

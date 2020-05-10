@@ -1,4 +1,4 @@
-package kz.sammilla.sammilla.config;
+package kz.sammilla.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"kz.sammilla.sammilla.controllers"})
+@ComponentScan(basePackages = {"kz.sammilla.controllers"})
 public class WebConfig implements WebMvcConfigurer {
 
     @Override

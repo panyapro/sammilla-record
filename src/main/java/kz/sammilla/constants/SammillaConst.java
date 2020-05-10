@@ -1,4 +1,4 @@
-package kz.sammilla.sammilla.constants;
+package kz.sammilla.constants;
 
 public interface SammillaConst {
 

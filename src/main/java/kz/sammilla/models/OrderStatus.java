@@ -1,4 +1,4 @@
-package kz.sammilla.sammilla.models;
+package kz.sammilla.models;
 
 public enum OrderStatus {
 

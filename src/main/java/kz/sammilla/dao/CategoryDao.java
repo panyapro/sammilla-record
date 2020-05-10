@@ -1,6 +1,6 @@
-package kz.sammilla.sammilla.dao;
+package kz.sammilla.dao;
 
-import kz.sammilla.sammilla.models.Category;
+import kz.sammilla.models.Category;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
